@@ -12,10 +12,10 @@ class Post(models.Model):
         verbose_name_plural = ("Posts")
 
     def __str__(self):
-        return self.name
-
-    def get_absolute_url(self):
-        return reverse("Post_detail", kwargs={"pk": self.pk})
+        return self.title
+    
+    # def get_absolute_url(self):
+    #     return reverse("Post_detail", kwargs={"pk": self.pk})
 
 
 
