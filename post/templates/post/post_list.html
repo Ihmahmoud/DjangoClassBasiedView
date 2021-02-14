@@ -1,1 +1,17 @@
 <h1>Post List</h1>
+
+{% comment %} {% for  post in object_list %}
+    <a href="">{{post}}</a><br><br>
+{% endfor %} {% endcomment %}
+
+{% comment %} 
+{% for  post in all_posts %}
+    <a href="">{{post}}</a><br><br>
+{% endfor %} {% endcomment %}
+
+<h1>{{CheckTheName}}
+<br>
+{% for  post in post_list %}
+    <a href="">{{post}}</a><br><br>
+{% endfor %}
+

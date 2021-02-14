@@ -19,9 +19,22 @@ from django.views.generic import ListView, DetailView, CreateView, UpdateView, D
 
 
 class PostList(ListView):
-    model = Post
+    model = Post    ## in template {object_list, post_list}
+    #context_object_name = 'all_posts'
+    ordering = ['-created_at']
+    #queryset = Post.objects.filter(active=True)
+    #template_name = 'post/test.html'
+    
 
-
+    ##method 
+    def get_queryset(self): ## will override of attribute for queryset = Post.objects.filter(active=True)
+        return Post.objects.filter(active=True)
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["CheckTheName"] = "Ihmahmoud"
+        return context
+    
 
 
 class PostDetail(DetailView):
